@@ -558,7 +558,17 @@
     </main>
 
     <!-- Footer -->
-    include virtual="sections/footer.html"
+    <script>
+      function loadHTML(elementId, filePath) {
+        fetch(filePath)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+          });
+      }
+
+      loadHTML("footer", "sections/footer.html");
+    </script>
 
     <!-- Scroll Top -->
     <a
