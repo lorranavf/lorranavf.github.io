@@ -558,17 +558,6 @@
     </main>
 
     <!-- Footer -->
-    <script>
-      function loadHTML(elementId, filePath) {
-        fetch(filePath)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById(elementId).innerHTML = data;
-          });
-      }
-
-      loadHTML("footer", "/sections/footer.html");
-    </script>
     <div id="footer">
       <!-- Content of footer.html -->
     </div>
@@ -598,5 +587,17 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      function loadHTML(elementId, filePath) {
+        fetch(filePath)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+          });
+      }
+
+      loadHTML("footer", "/sections/footer.html");
+    </script>
   </body>
 </html>
