@@ -48,10 +48,9 @@
 
   <body class="index-page">
     <!-- Header -->
-    <header
-      id="header"
-      class="header d-flex flex-column justify-content-center"
-    ></header>
+    <div id="header">
+      <!-- Content of header.html -->
+    </div>
     <!-- /Header -->
 
     <main class="main">
@@ -146,7 +145,7 @@
             document.getElementById(elementId).innerHTML = data;
           });
       }
-
+      loadHTML("header", "/sections/header.html");
       loadHTML("footer", "/sections/footer.html");
       loadHTML("about", "/sections/about.html");
       loadHTML("skills", "/sections/skills.html");
