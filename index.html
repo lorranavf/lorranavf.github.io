@@ -8,8 +8,12 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/lorrana.ico" rel="icon" />
-    <link href="assets/img/lorrana.ico" rel="apple-touch-icon" />
+    <link href="assets/img/lorrana.ico" rel="icon" style="border-radius: 50%" />
+    <link
+      href="assets/img/lorrana.ico"
+      rel="apple-touch-icon"
+      style="border-radius: 50%"
+    />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -67,22 +71,27 @@
             >
           </li>
           <li>
+            <a href="#skills"
+              ><i class="bi bi-hdd-stack navicon"></i><span>Skills</span></a
+            >
+          </li>
+          <li>
+            <a href="#portfolio"
+              ><i class="bi bi-images navicon"></i><span>Portfolio</span></a
+            >
+          </li>
+          <li>
             <a href="#resume"
               ><i class="bi bi-file-earmark-text navicon"></i
               ><span>Resume</span></a
             >
           </li>
           <!-- <li>
-            <a href="#portfolio"
-              ><i class="bi bi-images navicon"></i><span>Portfolio</span></a
-            >
-          </li>
-          <li>
             <a href="#services"
               ><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a
             >
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="#contact"
               ><i class="bi bi-envelope navicon"></i><span>Contact</span></a
             >
@@ -144,6 +153,11 @@
         <!-- Content of skills.html -->
       </div>
 
+      <!-- Portfolio Section -->
+      <div id="portfolio">
+        <!-- Content of portfolio.html -->
+      </div>
+
       <!-- Resume Section -->
       <div id="resume">
         <!-- Content of resume.html -->
@@ -186,11 +200,21 @@
           .then((response) => response.text())
           .then((data) => {
             document.getElementById(elementId).innerHTML = data;
+            initializeProgressBars();
           });
+      }
+      function initializeProgressBars() {
+        const progressBars = document.querySelectorAll(".progress-bar");
+
+        progressBars.forEach((bar) => {
+          const value = bar.getAttribute("aria-valuenow");
+          bar.style.width = `${value}%`;
+        });
       }
       loadHTML("footer", "/sections/footer.html");
       loadHTML("about", "/sections/about.html");
       loadHTML("skills", "/sections/skills.html");
+      loadHTML("portfolio", "/sections/portfolio.html");
       loadHTML("resume", "/sections/resume.html");
     </script>
   </body>
